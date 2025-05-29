@@ -1,242 +1,134 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Visual Test Page</title>
+  <meta charset="UTF-8">
+  <title>Proceso de Preparación y Análisis de Datos</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background: #f1f1f1;
-      padding: 20px;
+      font-family: "Georgia", serif;
+      background-color: #fff;
+      color: #222;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-    header {
-      background: #4A90E2;
-      color: white;
-      padding: 20px;
+    h1 {
       text-align: center;
-      border-radius: 10px;
+      margin-bottom: 2rem;
     }
-    section {
-      margin: 30px 0;
+    .paso {
+      margin-bottom: 3rem;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 2rem;
     }
-    .card {
-      background: white;
-      border-radius: 8px;
-      padding: 15px;
-      margin: 10px 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .paso img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+      margin-top: 1rem;
     }
-    .btn {
-      background: #28a745;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 6px;
-      cursor: pointer;
-      margin-right: 10px;
+    .paso h2 {
+      color: #003366;
     }
-    .btn:hover {
-      background: #218838;
-    }
-    .alert {
-      padding: 15px;
-      background-color: #f44336;
-      color: white;
-      border-radius: 5px;
-      margin: 10px 0;
-    }
-    .gallery {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .gallery img {
-      width: 150px;
-      border-radius: 8px;
-      object-fit: cover;
-    }
-    .progress {
-      background: #ccc;
-      border-radius: 20px;
-      overflow: hidden;
-      height: 20px;
-      margin-top: 10px;
-    }
-    .progress-bar {
-      height: 100%;
-      background: #007bff;
-      width: 60%;
-    }
-    .badge {
-      background: crimson;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 0.8em;
-      margin-left: 5px;
-    }
-    .user-card {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
-    .user-card img {
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-    }
-    .icon-btn {
-      display: inline-flex;
-      align-items: center;
-      background: #6c757d;
-      color: white;
-      padding: 8px 12px;
-      border-radius: 5px;
-      border: none;
-      margin-right: 5px;
-    }
-    .icon-btn svg {
-      margin-right: 5px;
+    .paso p {
+      text-align: justify;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Página de Prueba Visual Completa</h1>
-    <p>Elementos HTML comunes con diseño visual atractivo</p>
-  </header>
+  <h1>Proceso de Preparación y Análisis de Datos</h1>
 
-  <section>
-    <h2>Alertas</h2>
-    <div class="alert">¡Error! Algo salió mal.</div>
-  </section>
+  <div class="paso">
+    <h2>Paso 1: Creación del Bucket</h2>
+    <p>Se crea el bucket con el nombre correspondiente al formato “nombre-alumno”, cumpliendo con las indicaciones del entorno de almacenamiento.</p>
+    <img src="1.png" alt="Paso 1">
+  </div>
 
-  <section>
-    <h2>Formulario de Contacto</h2>
-    <div class="card">
-      <form>
-        <label>Nombre:</label><br>
-        <input type="text" placeholder="Tu nombre"><br><br>
+  <div class="paso">
+    <h2>Paso 2: Carga del Excel</h2>
+    <p>Se sube al bucket el archivo Excel que contiene los registros en bruto de los avistamientos.</p>
+    <img src="2.png" alt="Paso 2">
+  </div>
 
-        <label>Email:</label><br>
-        <input type="email" placeholder="tu@email.com"><br><br>
+  <div class="paso">
+    <h2>Paso 3: Carga a Alteryx (Dataprep)</h2>
+    <p>Se importa el archivo Excel a la herramienta Alteryx (Dataprep by Trifacta) para iniciar su preparación.</p>
+    <img src="3.png" alt="Paso 3">
+  </div>
 
-        <label>Mensaje:</label><br>
-        <textarea rows="4" placeholder="Tu mensaje..."></textarea><br><br>
+  <div class="paso">
+    <h2>Paso 4: Integración al Flow</h2>
+    <p>El Excel es vinculado a un flujo de trabajo (flow) para su análisis dentro de la plataforma.</p>
+    <img src="4.png" alt="Paso 4">
+  </div>
 
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 5: Visualización de Datos en Bruto</h2>
+    <p>Se revisa el contenido original del archivo para identificar los campos disponibles y su estado.</p>
+    <img src="5.png" alt="Paso 5">
+  </div>
 
-  <section>
-    <h2>Botones con Íconos</h2>
-    <div class="card">
-      <button class="icon-btn">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M8 0a8 8 0 1 0 8 8A8.013 8.013 0 0 0 8 0zM4 8l4-4v3h4v2H8v3z"/>
-        </svg>
-        Descargar
-      </button>
-      <button class="icon-btn">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-          <path d="M1 2.828c.885-.37 2.21-.828 4-.828s3.115.458 4 .828V1h2v2h-2v-.172c-.885.37-2.21.828-4 .828s-3.115-.458-4-.828V3H1V1h2v1.828z"/>
-        </svg>
-        Guardar
-      </button>
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 6: Transformaciones en la Recipe</h2>
+    <p>Se aplican transformaciones visibles en la receta (recipe), como limpieza de datos, renombre de columnas y filtrado de campos.</p>
+    <img src="6.png" alt="Paso 6">
+  </div>
 
-  <section>
-    <h2>Galería de Imágenes</h2>
-    <div class="card gallery">
-      <img src="https://picsum.photos/200?random=1" alt="img1">
-      <img src="https://picsum.photos/200?random=2" alt="img2">
-      <img src="https://picsum.photos/200?random=3" alt="img3">
-      <img src="https://picsum.photos/200?random=4" alt="img4">
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 7: Datos Transformados</h2>
+    <p>Se muestran los datos ya transformados y preparados para su análisis, listos para exportación.</p>
+    <img src="7.png" alt="Paso 7">
+  </div>
 
-  <section>
-    <h2>Tabla con Badge</h2>
-    <div class="card">
-      <table>
-        <thead>
-          <tr>
-            <th>Usuario</th>
-            <th>Rol</th>
-            <th>Notificaciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Maria</td>
-            <td>Admin</td>
-            <td><span class="badge">3</span></td>
-          </tr>
-          <tr>
-            <td>Pedro</td>
-            <td>Editor</td>
-            <td><span class="badge">1</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 8: Creación del Job</h2>
+    <p>Se ejecuta el job de exportación para generar una tabla con los datos tratados en BigQuery.</p>
+    <img src="8.png" alt="Paso 8">
+  </div>
 
-  <section>
-    <h2>Progreso de Tarea</h2>
-    <div class="card">
-      <p>Tarea completada: 60%</p>
-      <div class="progress">
-        <div class="progress-bar"></div>
-      </div>
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 9: Tabla en BigQuery</h2>
+    <p>Validación de que la tabla fue correctamente creada en el entorno de BigQuery con los datos procesados.</p>
+    <img src="9.png" alt="Paso 9">
+  </div>
 
-  <section>
-    <h2>Tarjeta de Usuario</h2>
-    <div class="card user-card">
-      <img src="https://i.pravatar.cc/100" alt="Avatar">
-      <div>
-        <strong>Laura Ríos</strong><br>
-        Ingeniera de Software<br>
-        <span class="badge">Activo</span>
-      </div>
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 10: Consulta SQL</h2>
+    <p>Se formula una consulta SQL para extraer las 5 formas de objetos más reportadas en los registros de avistamientos.</p>
+    <img src="10.png" alt="Paso 10">
+  </div>
 
-  <section>
-    <h2>Gráfico de Datos</h2>
-    <div class="card">
-      <canvas id="grafico" height="100"></canvas>
-    </div>
-  </section>
+  <div class="paso">
+    <h2>Paso 11: Resultados de Consulta</h2>
+    <p>Resultados obtenidos de la consulta, ordenados por frecuencia, lo que permite interpretar los datos más relevantes.</p>
+    <img src="11.png" alt="Paso 11">
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const ctx = document.getElementById('grafico').getContext('2d');
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Moto', 'Bicicleta', 'Scooter'],
-        datasets: [{
-          label: 'Detecciones',
-          data: [8, 12, 4],
-          backgroundColor: ['#007bff', '#ffc107', '#28a745']
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: { beginAtZero: true }
-        }
-      }
-    });
-  </script>
+  <div class="paso">
+    <h2>Paso 12: Visualización Gráfica</h2>
+    <p>Gráfico generado a partir de los datos procesados, evidenciando visualmente las principales formas reportadas.</p>
+    <img src="12.png" alt="Paso 12">
+  </div>
 
+  <div class="paso">
+    <h2>Paso 13: Conclusiones Finales</h2>
+    <p>Los datos permiten identificar patrones claros en los avistamientos, destacando formas y frecuencias de observación, útiles para estudios posteriores.</p>
+    <img src="13.png" alt="Paso 13">
+  </div>
+
+  <div class="paso">
+    <h2>Paso 14: Conclusiones Finales</h2>
+    <p>Los datos permiten identificar patrones claros en los avistamientos, destacando formas y frecuencias de observación, útiles para estudios posteriores.</p>
+    <img src="14.png" alt="Paso 13">
+  </div>
+
+  <div class="paso">
+    <h2>Paso 15: Conclusiones Finales</h2>
+    <p>Los datos permiten identificar patrones claros en los avistamientos, destacando formas y frecuencias de observación, útiles para estudios posteriores.</p>
+    <img src="15.png" alt="Paso 13">
+  </div>
+
+  
 </body>
 </html>
